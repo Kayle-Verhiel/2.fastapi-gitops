@@ -49,5 +49,23 @@ async def get_item(item_id: int):
     }
 
 
+@app.post("/api/items")
+async def create_item(name: str, description: str):
+    """
+    Docstring for create_item
+
+    :param name: Description
+    :type name: str
+    :param description: Description
+    :type description: str
+    """
+    return {
+        "id": 999,
+        "name": name,
+        "description": description,
+        "created": True,
+    }
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
