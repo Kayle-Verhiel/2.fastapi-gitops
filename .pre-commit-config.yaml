@@ -33,3 +33,13 @@ repos:
     hooks:
       - id: black
         language_version: python3
+
+  # --------------------------------------------------
+  # Python linting with Ruff
+  # --------------------------------------------------
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.0
+    hooks:
+      - id: ruff-check
+        args: ["--fix"]
+      - id: ruff-format
