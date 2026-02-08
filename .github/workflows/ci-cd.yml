@@ -59,6 +59,8 @@ jobs:
   build:
     name: Build Docker Image
     runs-on: ubuntu-latest
+    container:
+      image: python:3.12
     needs: [lint, test]
     if: github.event_name == 'push' || github.event_name == 'release'
     permissions:
