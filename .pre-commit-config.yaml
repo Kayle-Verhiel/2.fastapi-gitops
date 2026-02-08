@@ -2,4 +2,16 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
+      # the trailing white spaces which was already present
       - id: trailing-whitespace
+
+      # Prevent large files from commiting
+      - id: check-added-large-files
+        args: ["--maxkb=500"]
+
+      # Ensure files end with a newline
+      - id: end-of-file-fixer
+
+      # Check YAML syntax (exclude Helm charts)
+      - id: check-yaml
+        exclude: ^charts/
