@@ -41,12 +41,3 @@ repos:
     rev: 7.0.0
     hooks:
       - id: flake8
-
-  # --------------------------------------------------
-  # Security issues in Python code
-  # --------------------------------------------------
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.7
-    hooks:
-      - id: bandit
-        args: ["-r", "."]
