@@ -15,3 +15,38 @@ repos:
       # Check YAML syntax (exclude Helm charts)
       - id: check-yaml
         exclude: ^charts/
+
+  # --------------------------------------------------
+  # Python import sorting
+  # --------------------------------------------------
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+
+  # --------------------------------------------------
+  # Python code style (Black)
+  # --------------------------------------------------
+  - repo: https://github.com/psf/black
+    rev: 24.1.1
+    hooks:
+      - id: black
+        language_version: python3
+
+  # --------------------------------------------------
+  # Python linting & style checks
+  # --------------------------------------------------
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+
+  # --------------------------------------------------
+  # Security issues in Python code
+  # --------------------------------------------------
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.7
+    hooks:
+      - id: bandit
+        args: ["-r", "."]
