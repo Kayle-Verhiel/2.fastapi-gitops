@@ -1,13 +1,15 @@
 name: CI/CD Pipeline
 
-on:
-  release:
-    types: [published]
-  push:
-    branches:
-      - "**"
-    tags-ignore:
-      - "**"
+# on:
+#   release:
+#     types: [published]
+#   push:
+#     branches:
+#       - "**"
+#     tags-ignore:
+#       - "**"
+on: [push]
+
 env:
   IMAGE_NAME: fastapi_service
   REPO_NAME: kayleverhiel
